@@ -1,6 +1,6 @@
 const $source = document.getElementById("search-input");
 
-const typeHandler = function(e) {
+const typeHandlers = function(e) {
                 if ($source.value == "") {
         document.getElementById("gamepage").style.display = 'block';
         document.getElementById("favorites").style.display = 'flex';
@@ -14,7 +14,7 @@ const typeHandler = function(e) {
     } 
 }
 
-$source.addEventListener('input', typeHandler) // register for oninput
-$source.addEventListener('propertychange', typeHandler) // for IE8
+$source.addEventListener('input', typeHandlers) // register for oninput
+$source.addEventListener('propertychange', typeHandlers) // for IE8
 // $source.addEventListener('change', typeHandler) // fallback for Firefox for <select><option>, for <input> oninput is enough
         
