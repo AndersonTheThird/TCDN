@@ -1,32 +1,22 @@
 // VM Setup
 
 function StartVMWebsocket(filename) {
-  return fetch(filename)
-    .then(response => response.arrayBuffer())
-    .then(bits => WebAssembly.compile(bits))
-    .then(module => {
-      return new WebAssembly.Instance(module);
-    });
+  (async() => {
+const codePromise = fetch(filename)
+const { instance } = await WebAssembly.instantiateStreaming(codePromise)
+return instance
+})()
 }
 
-// C++ VM
+StartVMWebsocket("../source/wasm/output.wasm").then(instance => {
+const buffer = new Uint8Array(instance.exports.memory.buffer)
 
-let add, divide, multiply, subtract;
+const pointer = instance.exports.main()
 
-StartVMWebsocket(
-  "https://cdn.glitch.com/197f19a4-c913-4eb7-baf5-c1f36a4965be%2Ftest%20(4).wasm?v=1586730773116"
-).then(instance => {
-  add = instance.exports._Z3addii;
-  divide = instance.exports._Z6divideii;
-  multiply = instance.exports._Z8multiplyii;
-  subtract = instance.exports._Z8subtractii;
-});
+let string = ""
+for(let i = pointer; buffer[i]; i++) {
+  string += String.fromCharCode(buffer[i])
+}
 
-// C VM
-let letfunc;
-
-StartVMWebsocket(
-  "https://cdn.glitch.com/197f19a4-c913-4eb7-baf5-c1f36a4965be%2Ftest%20(5).wasm"
-).then(instance => {
-  letfunc = instance.exports.letfunc;
+document.querySelector("#maintenance > center > a").innerHTML = string;
 });
