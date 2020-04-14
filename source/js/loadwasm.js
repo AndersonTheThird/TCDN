@@ -1,5 +1,8 @@
-// VM Setup
+// WebAssebly - C Setup
 
+const WebSocketReady = false
+
+if (WebSocketReady) {
   (async() => {
 const codePromise = fetch("https://cdn.tetretalk.com/source/wasm/output.wasm")
 const { instance } = await WebAssembly.instantiateStreaming(codePromise)
@@ -16,3 +19,4 @@ for(let i = pointer; buffer[i]; i++) {
 document.querySelector("#maintenance > center > a").innerHTML = string;
 
 })()
+}
