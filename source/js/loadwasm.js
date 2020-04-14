@@ -1,14 +1,9 @@
 // VM Setup
 
-function StartVMWebsocket(filename) {
   (async() => {
-const codePromise = fetch(filename)
+const codePromise = fetch("../source/wasm/output.wasm")
 const { instance } = await WebAssembly.instantiateStreaming(codePromise)
-return instance
-})()
-}
 
-StartVMWebsocket("../source/wasm/output.wasm").then(instance => {
 const buffer = new Uint8Array(instance.exports.memory.buffer)
 
 const pointer = instance.exports.main()
@@ -19,4 +14,5 @@ for(let i = pointer; buffer[i]; i++) {
 }
 
 document.querySelector("#maintenance > center > a").innerHTML = string;
-});
+
+})()
