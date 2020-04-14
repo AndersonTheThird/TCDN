@@ -1,0 +1,61 @@
+.white {
+  color: white !important;
+}
+
+.spinthelogo {
+  animation: logospin 2s infinite 0s linear;
+}
+
+.easteregg {
+  animation: barrel 3s 1 0s linear;
+}
+
+@keyframes logospin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes barrel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.swal2-close {
+  font-family: arial;
+  top: -20px !important;
+  right: -20px !important;
+  background: #f2f2f2 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+.swal2-close:hover {
+  transform: scale(1.3) !important;
+}
+/*
+#maintenance {
+  display: none;
+}
+.serveroffline {
+  display: none;
+}
+*/
+
+#maintenance {
+  display: block;
+}
+article {
+  display: none;
+}
+#f-title {
+  display: none;
+}
+#ng-title {
+  display: none;
+}
