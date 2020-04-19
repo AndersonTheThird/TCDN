@@ -114,7 +114,7 @@ window.onload = function() {
   Swal.fire({
     title: "Join our discord!",
     html:
-      "Be sure to join our very own discord server at <a href='https://discord.gg/TSENdEG'>https://discord.gg/TSENdEG</a>!",
+      "Be sure to join our very own discord server at <a href=‘https://discord.gg/TSENdEG‘>https://discord.gg/TSENdEG</a>!",
     icon: "info",
     focusConfirm: false
   }).then(result => {
