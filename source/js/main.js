@@ -109,6 +109,16 @@ function playgamefull(link, name, icon) {
 }
 
 window.onload = function() {
+  // Desktop Version
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
+if (getURLParameter('desktop') == "true") {
+  document.querySelector("#maintenance > center > a").parent.parent.style.background = "orangered"
+document.querySelector("#maintenance > center > a").innerHTML = "You are beta testing tetretalk desktop. You agree to not share this program and experience bugs."
+}
+  
   var beta = localStorage.getItem("discordknows");
   if (beta == "1") return;
   Swal.fire({
