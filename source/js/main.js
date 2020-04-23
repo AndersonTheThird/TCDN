@@ -115,7 +115,7 @@ function getURLParameter(name) {
 }
 
 if (getURLParameter('desktop') == "true") {
-  document.querySelector("#maintenance > center > a").parent.parent.style.background = "orangered"
+  document.querySelector("#maintenance > center > a").parentElement.parentElement.style.background = "orangered"
 document.querySelector("#maintenance > center > a").innerHTML = "You are beta testing tetretalk desktop. You agree to not share this program and experience bugs."
 }
   
