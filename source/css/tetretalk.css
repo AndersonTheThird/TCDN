@@ -40,7 +40,7 @@
 }
 
 #maintenance {
-  display: block;
+  display: none;
 }
 .serveroffline {
   display: none;
