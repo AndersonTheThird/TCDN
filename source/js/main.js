@@ -210,7 +210,7 @@ function dupecheck(name) {
 }
 
 function favorite(image, name, author, description, embed) {
-  if (dupecheck(btoa(name)) == true) {
+  if (dupecheck(btoa(name)) == true || embed == "status:offline") {
     Swal.fire({
       title: "Already Favorited",
       text: "You've already favorited this game.",
