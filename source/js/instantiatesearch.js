@@ -5,7 +5,9 @@ const typeHandlers = function(e) {
         document.getElementById("gamepage").style.display = 'block';
         document.getElementById("favorites").style.display = 'flex';
         document.getElementById("ng-title").style.display = 'block';
+try {
         document.getElementById("f-title").style.display = 'block';
+} catch {}
     } else {
         document.getElementById("gamepage").style.display = 'none';
         document.getElementById("favorites").style.display = 'none';
