@@ -12,6 +12,7 @@ const typeHandlers = function(e) {
         document.getElementById("ng-title").style.display = 'none';
 try {
 document.getElementById("f-title").style.display = 'none';
+} catch {
 }
     } 
 }
