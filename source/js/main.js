@@ -115,7 +115,8 @@ function getURLParameter(name) {
 }
 
 if (getURLParameter('desktop') == "true") {
-  document.querySelector("#maintenance > center > a").parentElement.parentElement.style.background = "orangered"
+  document.querySelector("#maintenance > center > a").parentElement.parentElement.style.background = "orangered";
+  document.querySelector("#maintenance > center > a").parentElement.parentElement.style.display = "block";
 document.querySelector("#maintenance > center > a").innerHTML = "You are beta testing tetretalk desktop. You agree to not share this program and experience bugs."
 }
   
@@ -182,7 +183,7 @@ if (localStorage.getItem("Favorites") === null) {
           fg[i].embed +
           '`)"><i class="material-icons" style="     font-size: 30px;     text-decoration: none;     color: crimson; ">play_arrow</i></a>              <a title="Unfavorite" onclick="unfavorite(`' +
           atob(fg[i].name) +
-          '`, this);"><i class="material-icons" style="font-size: 30px; text-decoration: none; color: #00e676;">star</i></a></p> </article>'
+          '`, this);"><i class="material-icons" style="font-size: 30px; text-decoration: none; color: rgb(0, 31, 255);">star</i></a></p> </article>'
       );
     }
     console.log(x);
