@@ -73,7 +73,7 @@ function soon() {
 function author_search(author) {
   if (!author) return null;
   var marleigh_search = document.querySelector("#search-input")
-  marleigh_search.innerHTML = author;
+  marleigh_search.value = author;
   marleigh.search(author);
 }
 
