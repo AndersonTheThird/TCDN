@@ -67,7 +67,16 @@ function soon() {
     focusConfirm: false
   });
   document.getElementsByClassName("swal2-popup")[0].focus();
+};
+
+// Get Games by x author
+function author_search(author) {
+  if (!author) return null;
+  var marleigh_search = document.querySelector("#search-input")
+  marleigh_search.innerHTML = author;
+  marleigh.search(author);
 }
+
 // Play a game in fullscreen
 function playgamefull(link, name, icon) {
   if (link == "status:offline") {
