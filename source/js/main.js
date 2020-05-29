@@ -183,7 +183,7 @@ if (localStorage.getItem("Favorites") === null) {
           fg[i].image +
           '" alt=""></center>                 </a>                  <a>         <h1 style="text-decoration: none; cursor: text;">' +
           atob(fg[i].name) +
-          '</h1>     </a>     <h1 style="     font-size: 15px;     margin-top: -20px;     text-decoration: none;     ">Developed By <a onclick=`author_search("' + atob(fg[i].author) + '")`>' +
+          '</h1>     </a>     <h1 style="     font-size: 15px;     margin-top: -20px;     text-decoration: none;     ">Developed By <a onclick=author_search("' + atob(fg[i].author) + '")>' +
           atob(fg[i].author) +
           '</a></h1>  <p class="post-content">' +
           atob(fg[i].description) +
