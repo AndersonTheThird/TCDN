@@ -332,7 +332,7 @@ const typeHandler = function(e) {
       document.querySelector("#searchcontent").innerHTML = "";
     }, 3000);
   } else if (source.value.toLowerCase() == "marleigh") {
-document.querySelector("#search-input").value = "💓"
+document.querySelector("#search-input").value = "❤️"
   }
 };
 source.addEventListener("input", typeHandler); // register for oninput
